@@ -1,0 +1,22 @@
+<div
+  class="container"
+  id="mainContainer"
+  style="background: rgba(0, 0, 0, 0.9)"
+>
+  <fieldset>
+    <legend>Identifícate</legend>
+    <form (ngSubmit)="validarCredenciales()">
+      <p>
+        <label for="dni_input">DNI</label>
+        <br />
+        <input type="text" id="dni_input" [ngStyle]="{'border-color':invalidUserStyle}"/>
+      </p>
+      <p>
+        <label for="pass_input">Contraseña</label>
+        <br />
+        <input type="password" id="pass_input" [ngStyle]="{'border-color':invalidPassStyle}" />
+      </p>
+      <button type="button" (click)="validarCredenciales()">ACCEDER</button>
+    </form>
+  </fieldset>
+</div>

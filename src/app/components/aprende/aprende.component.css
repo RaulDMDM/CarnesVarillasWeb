@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:host{
+    display: flex;
+    min-height: calc(100vh - 318px);
+}
+
+.titlesRibbon{
+    display: inline-flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 50%;
+    position: sticky;
+    top: 144px;
+    z-index: 150;
+    background:#632626;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 30px;
+    transition: all;
+    transition-duration: 1s;
+}
+
+.titlesRibbon:hover{
+    background:white;
+    color: #AC4545;
+}
+
+.titlesRibbon-selected{
+    background: white;
+    color: #AC4545;
+}
+
+fieldset{
+    width: 1000px;
+    margin: auto;
+    border: #AC4545 3px solid;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 50px;
+    
+}
+
+legend{
+    width: auto;
+    margin: auto;
+    padding:30px;
+    border: #AC4545 3px solid;
+    color: white;
+    border-radius: 10px;
+    float:none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+svg{
+    position: absolute;
+}
+
+#despieceTernera{
+    width: 946px;
+    height: 582px;
+    margin: auto;
+}
+
+.despieceItem{
+    position: absolute;
+    fill: #AC4545;
+    stroke: white ;
+    transition: all;
+    transition-duration: 2s;
+    transition: all;
+    transition-duration: 1s;
+}
+
+.despieceItem:hover{
+    cursor: pointer;
+    fill: aliceblue;
+}
+
+.despieceDescript{
+    display: none;
+    position: absolute;
+    z-index:100;
+    max-width: 500px;
+    height: auto;
+    padding: 10px;
+    background: black;
+    border:#632626 5px solid;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-justify:auto;
+}
+table tr{
+    color: white;
+    text-justify: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+table th{
+    font-size: 30px;  
+    text-align: center;
+    padding-bottom: 10px;
+}
+table img{
+    width: 300px;
+    height: auto;
+}
+table td{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 40px;
+}
+

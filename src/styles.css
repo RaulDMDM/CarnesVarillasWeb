@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin:0;
+}
+
+body{
+    background: url("assets/Background.png") no-repeat top fixed;
+    background-size: cover;
+
+}
+
+table{
+    width: 90%;
+    text-align: center;
+    vertical-align: bottom;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+tr{
+    height: 70px;
+    padding-bottom: 10px;
+    border-bottom: white 1px solid;
+}
+
+thead{
+    width: 25%;
+    background:white;
+    color: #AC4545;
+}
+
+
+fieldset{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+    border: #AC4545 3px solid;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: auto;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+legend{
+    width: auto;
+    margin: auto;
+    padding:10px;
+    border: #AC4545 3px solid;
+    color: white;
+    border-radius: 10px;
+    float:none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+button{
+    font-family: 'Roboto', sans-serif;
+    background-color: #AC4545;
+    color: white;
+    border-color: white;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+button:hover{
+    background-color:#5e2424;
+}
+
+legend{
+    width: auto;
+    margin: auto;
+    padding:10px;
+    border: #AC4545 3px solid;
+    color: white;
+    border-radius: 10px;
+    float:none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+form {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+}

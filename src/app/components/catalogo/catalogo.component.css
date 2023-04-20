@@ -1,0 +1,35 @@
+:host{
+    display: flex;
+    min-height: calc(100vh - 318px);
+}
+
+
+.titlesRibbon{
+    display: inline-flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 25%;
+    position: sticky;
+    top: 144px;
+    z-index: 150;
+    background:#632626;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 30px;
+    transition: all;
+    transition-duration: 1s;
+}
+
+.titlesRibbon:hover{
+    background:white;
+    color: #AC4545;
+}
+
+.titlesRibbon-selected{
+    background: white;
+    color: #AC4545;
+}
+

@@ -1,0 +1,526 @@
+<div class="container p-0 pb-5" style="background: rgba(0, 0, 0, 0.9);">
+    <div id="ribbonContainer" class="sticky-top" style="height: 100px; width: auto; margin-bottom: 30px; top: 144px">
+        <span class="titlesRibbon" 
+        id="ribbonDespieces"
+        [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonDespieces'}"
+        (click)="scrollAndSelect(despieces, $event)">Despieces</span>
+        <span class="titlesRibbon" 
+        id="ribbonHerramientas"
+        [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonHerramientas'}"
+        (click)="scrollAndSelect(herramientas, $event)">Herramientas</span>
+    </div>
+    <div #despieces id="despieces">
+        <fieldset>
+            <legend>TERNERA</legend>
+            <div id="despieceTernera">
+                <div id="1-cabeza-container">
+                    <svg width="237px" height="174px" id="1-cabeza-svgItem">
+                        <path id="1-cabeza" class="despieceItem" d="M26 24c-5,6 0,24 19,33 2,1 5,1 7,2 16,8 19,5
+                            27,18 10,16 -19,34 -29,42 -15,10 -46,19 -49,29 0,0 -1,3 -1,4 -1,8 1,15 4,22 30,-6 76,-5 109,-4
+                            5,-35 -6,-24 24,-43 15,-10 50,-25 58,0 3,-3 6,-10 8,-14 2,-3 2,-5 4,-8 4,-8 6,-14 13,-22 4,-5
+                            9,-9 9,-14 -14,-6 -11,-1 -20,-2 -2,-14 13,-11 23,-32 1,-2 2,-4 3,-7 1,-3 1,-4 2,-8l-28 4c-10,3
+                            -28,12 -33,20 -1,0 -3,5 -4,5 -3,4 -21,2 -25,-2 -8,-10 -5,-6 -20,-11 -11,-4 -8,-4 -23,-7 -9,-2
+                            -16,-3 -24,-8 -5,-3 -6,-4 -7,-9 -1,-2 -1,-3 -2,-5 0,-2 0,-2 0,-3 -1,-2 0,0 -1,-2l0 -1c0,-1 0,-1
+                            0,-1 -4,0 -6,3 -7,9 -2,14 7,24 20,29 10,3 24,7 30,15 5,6 4,13 0,13 -2,1 -17,-9 -20,-11 -20,-10
+                        -25,-2 -49,-15 -16,-9 -11,-14 -18,-16z"/>
+                    </svg>
+                    <div id="1-cabeza-display" class="despieceDescript">
+                        <span class="h1">Cabeza</span> <br><br>
+                        <span>La cabeza de ternera es un ingrediente que se utiliza en la gastronomía en algunas culturas. 
+                            A menudo se utiliza para hacer caldos y sopas, como el famoso "cabeza de ternera en caldo" en algunas 
+                            regiones de España y América Latina. También se puede utilizar en guisos y platos de estofado</span>
+                    </div>
+                </div>
+                <div id="2-lengua-container">
+                    <svg width="108px" height="41px" id="2-lengua-svgItem" style="margin-top: 176px ; margin-left: 7px">
+                        <path id="2-lengua" class="despieceItem" d="M0 6c0,37 45,21 77,34 6,2 10,1 14,-2 13,-8 
+                        18,-13 16,-29 -1,-4 -1,-4 -4,-5 -16,-8 -79,-2 -103,2z"/>
+                    </svg>
+                    <div id="2-lengua-display" class="despieceDescript">
+                        <span class="h1">Lengua</span> <br><br>
+                        <span>La lengua de ternera se utiliza en la gastronomía en una gran variedad de platos tradicionales, 
+                            como guisos, sopas y ensaladas. También se utiliza en la producción de embutidos y se puede 
+                            encontrar en charcuterías y carnicerías como un producto de carne enlatada.</span>
+                    </div>
+                </div>
+                <div id="3-carrillada-container">
+                    <svg width="88px" height="124px" id="3-carrillada-svgItem" style="margin-top: 124px ; margin-left: 105px">
+                        <path id="3-carrillada" class="despieceItem" d="M0 93c9,8 19,15 30,21 4,1 6,2 9,3 4,1 24,13 30,4 3,-4 0,-12 
+                        0,-14 2,-42 6,-45 18,-84 4,-12 -3,-18 -12,-22 -14,-5 -28,4 -39,11 -39,23 1,42 -22,68 -1,2 
+                        -3,4 -4,5 -3,3 -8,5 -10,8z"/>
+                    </svg>
+                    <div id="3-carrillada-display" class="despieceDescript">
+                        <span class="h1">Carrillada</span> <br><br>
+                        <span>La carrillada de ternera es un corte de carne que se encuentra en las mejillas del animal y que es 
+                            muy valorado en la gastronomía. Es una carne tierna y jugosa que se utiliza en una gran variedad de 
+                            platos, especialmente en guisos y estofados.<br><br>En la gastronomía española, por ejemplo, se utiliza 
+                            la carrillada de ternera para hacer platos como el famoso "Estofado de carrillada", que es un plato 
+                            tradicional en algunas regiones del país. También se puede cocinar a la parrilla o asada en el horno, 
+                            y se puede combinar con una gran variedad de salsas y guarniciones.<br><br>Además de su delicioso sabor, 
+                            la carrillada de ternera también es rica en nutrientes importantes, como proteínas y hierro.</span>
+                    </div>
+                </div>
+                <div id="4-pescuezo-container">
+                    <svg width="165px" height="214px" id="4-pescuezo-svgItem" style="margin-top: 74px ; margin-left: 179px">
+                        <path id="4-pescuezo" class="despieceItem" d="M46 213c19,-30 91,-34 120,-32 -4,-8 -3,-7 -6,-17 -7,-24 4,-17
+                        -2,-28 -5,-8 -8,-16 -9,-26 -3,-26 -3,-18 -3,-44 0,-16 3,-30 3,-45 -2,-2 -10,-4 -13,-5 -5,-1
+                        -9,-3 -13,-5 -8,-4 -22,-4 -33,-4 -11,0 -20,-7 -31,-7 -3,4 -6,5 -8,11 -2,4 -5,9 -8,13 -2,3
+                        -1,2 -3,6 -1,2 -2,4 -3,7 -2,5 -4,9 -6,14l-10 29c-3,10 -6,20 -10,31 -3,10 -5,20 -8,31l-3
+                            16c-1,25 24,34 41,50 2,3 2,3 5,5z"/>
+                    </svg>
+                    <div id="4-pescuezo-display" class="despieceDescript">
+                        <span class="h1">Pescuezo</span> <br><br>
+                        <span>El pescuezo de ternera es un corte de carne que se encuentra en la parte superior del cuello 
+                            del animal y que es muy valorado en la gastronomía por su sabor y textura. Es una carne jugosa 
+                            y llena de sabor que se utiliza en una gran variedad de platos.<br><br>En la gastronomía, el 
+                            pescuezo de ternera se utiliza a menudo en guisos y estofados, ya que su alto contenido de 
+                            colágeno lo hace ideal para cocinar a fuego lento. También se puede utilizar para hacer hamburguesas 
+                            y albóndigas caseras, y se puede cocinar a la parrilla o asado en el horno.<br><br>Además de su 
+                            delicioso sabor, el pescuezo de ternera también es una fuente importante de nutrientes, como proteínas, 
+                            hierro y vitaminas del complejo B. Por esta razón, es una excelente opción para aquellos que buscan una 
+                            carne sabrosa y saludable para incluir en su dieta.</span>
+                    </div>
+                </div>
+                <div id="5-morrillo-container">
+                    <svg width="182px" height="34px" id="5-morrillo-svgItem" style="margin-top: 61px ; margin-left: 314px; z-index: 1">
+                        <path id="5-morrillo" class="despieceItem" d="M0 24c36,21 161,6 182,-19 -12,-1 -24,-3 -36,-3 -14,0 -28,-2
+                        -44,-2 -50,0 -51,12 -88,21 -7,2 -7,-1 -14,3z"/>
+                    </svg>
+                    <div id="5-morrillo-display" class="despieceDescript">
+                        <span class="h1">Morrillo</span> <br><br>
+                        <span>El morrillo de ternera es un corte de carne que se encuentra en la parte superior del cuello y 
+                            la nuca del animal y que es muy valorado en la gastronomía por su sabor y textura. Es una carne 
+                            jugosa y tierna que se utiliza en una gran variedad de platos.<br><br>En la gastronomía, el morrillo 
+                            de ternera se utiliza a menudo en guisos y estofados, ya que su alto contenido de colágeno lo hace 
+                            ideal para cocinar a fuego lento. También se puede utilizar para hacer hamburguesas y albóndigas 
+                            caseras, y se puede cocinar a la parrilla o asado en el horno.<br><br>Además de su delicioso sabor, 
+                            el morrillo de ternera también es una fuente importante de nutrientes, como proteínas, hierro y 
+                            vitaminas del complejo B. Por esta razón, es una excelente opción para aquellos que buscan una carne 
+                            sabrosa y saludable para incluir en su dieta.</span>
+                    </div>
+                </div>
+                <div id="6-aguja-container">
+                    <svg width="171px" height="143px" id="6-aguja-svgItem" style="margin-top: 68px ; margin-left: 328px">
+                        <path id="6-aguja" class="despieceItem" d="M4 29c0,9 -2,14 -3,22 -2,16 -3,88 16,92l146 -13c0,-42 9,-90
+                        8,-130 -32,21 -66,33 -167,29z"/>
+                    </svg>
+                    <div id="6-aguja-display" class="despieceDescript">
+                        <span class="h1">Aguja</span> <br><br>
+                        <span>La aguja de ternera es un corte de carne que se encuentra en la parte delantera del animal y 
+                            que es muy valorado en la gastronomía por su sabor y textura. Es una carne jugosa y llena de 
+                            sabor que se utiliza en una gran variedad de platos.<br><br>En la gastronomía, la aguja de ternera 
+                            se utiliza a menudo en guisos y estofados, ya que su alto contenido de colágeno lo hace ideal para 
+                            cocinar a fuego lento. También se puede utilizar para hacer asados al horno y estofados de larga 
+                            cocción. Además, algunos chefs utilizan la aguja de ternera para hacer carne deshilachada para rellenar 
+                            sándwiches y tacos.<br><br>Además de su delicioso sabor, la aguja de ternera también es una fuente 
+                            importante de nutrientes, como proteínas, hierro y vitaminas del complejo B.</span>
+                    </div>
+                </div>
+                <div id="7-lomoAlto-container">
+                    <svg width="130px" height="130px" id="7-lomoAlto-svgItem" style="margin-top: 66px ; margin-left: 495px">
+                        <path id="7-lomoAlto" class="despieceItem" d="M124 0c-8,2 -20,2 -27,1 -7,-2 -73,0 -90,-1 1,16 -2,32 -2,48l-4
+                        47c-1,8 -1,16 -1,24 0,8 -1,11 1,11l129 -7c-3,-43 -5,-81 -6,-123z"/>
+                    </svg>
+                    <div id="7-lomoAlto-display" class="despieceDescript">
+                        <span class="h1">Lomo alto</span> <br><br>
+                        <span>El lomo alto de ternera es un corte de carne que se encuentra en la parte superior del lomo del animal 
+                            y que es muy valorado en la gastronomía por su sabor y textura. Es una carne jugosa y tierna que se 
+                            utiliza en una gran variedad de platos.<br><br>En la gastronomía, el lomo alto de ternera se utiliza 
+                            a menudo para hacer filetes, ya que es una carne muy tierna y jugosa. También se puede utilizar para 
+                            hacer asados y guisos, y se puede cocinar a la parrilla o asado en el horno.<br><br>Además de su 
+                            delicioso sabor, el lomo alto de ternera también es una fuente importante de nutrientes, como proteínas, 
+                            hierro y vitaminas del complejo B.</span>
+                    </div>
+                </div>
+                <div id="8-solomillo-container">
+                    <svg width="152px" height="37px" id="8-solomillo-svgItem" style="margin-top: 66px ; margin-left: 626px; z-index: 1">
+                        <path id="8-solomillo" class="despieceItem" d="M0 1c35,54 138,39 152,5 -7,-1 -12,0 -18,-3 -8,-3 -9,-3 -19,-3
+                        -5,1 -11,3 -17,4 -9,1 -20,0 -28,-3 -7,-2 -39,1 -50,0 -6,-1 -13,0 -20,0z"/>
+                    </svg>
+                    <div id="8-solomillo-display" class="despieceDescript">
+                        <span class="h1">Solomillo</span> <br><br>
+                        <span>El solomillo de ternera es un corte de carne que se encuentra en la parte baja de la columna vertebral 
+                            del animal y que es muy valorado en la gastronomía por su sabor y textura. Es una carne tierna y jugosa 
+                            que se utiliza en una gran variedad de platos.<br><br>En la gastronomía, el solomillo de ternera se utiliza 
+                            a menudo para hacer filetes, ya que es una carne muy tierna y jugosa. También se puede utilizar para hacer 
+                            carpaccios, brochetas y asados al horno. Además, algunos chefs lo utilizan para hacer tartares de carne.
+                            <br><br>Además de su delicioso sabor, el solomillo de ternera también es una fuente importante de nutrientes, 
+                            como proteínas, hierro y vitaminas del complejo B.</span>
+                    </div>
+                </div>
+                <div id="9-lomoBajo-container">
+                    <svg width="152px" height="116px" id="9-lomoBajo-svgItem" style="margin-top: 73px ; margin-left: 623px">
+                        <path id="9-lomoBajo" class="despieceItem" d="M8 117l125 -6 20 -103c-31,32 -108,41 -153,-8 -1,14 3,108 8,117z"/>
+                    </svg>
+                    <div id="9-lomoBajo-display" class="despieceDescript">
+                        <span class="h1">Lomo bajo</span> <br><br>
+                        <span>El lomo bajo de ternera es un corte de carne que se encuentra en la parte inferior del lomo del animal. 
+                            Es una carne muy valorada en la gastronomía por su sabor intenso y su textura jugosa. Se caracteriza por 
+                            tener una veta de grasa en el centro que le da una gran jugosidad y sabor.<br><br>En la cocina, el lomo 
+                            bajo de ternera es muy versátil y se utiliza en una gran variedad de platos. Se puede cocinar a la parrilla, 
+                            asado en el horno, en guisos o estofados. También se puede utilizar para hacer hamburguesas o picarlo para 
+                            preparar salsas y rellenos.<br><br>Además de su exquisito sabor, el lomo bajo de ternera es una excelente 
+                            fuente de proteínas de alta calidad, hierro y vitaminas del complejo B.</span>
+                    </div>
+                </div>
+                <div id="10-cadera-container">
+                    <svg width="130px" height="120px" id="10-cadera-svgItem" style="margin-top: 63px ; margin-left: 760px">
+                        <path id="10-cadera" class="despieceItem" d="M0 121l46 0c8,-14 16,-22 31,-21 1,-1 1,-2 2,-4 0,0 0,0 0,0 
+                        15,-31 33,-21 52,-33 -29,-21 -10,-52 -8,-62 -33,-2 -26,-2 -58,2 -5,0 -8,-1 -14,1 -7,1 -18,2
+                        -25,5 -8,2 -4,2 -6,10 -8,28 -14,65 -19,95 -1,3 -1,3 -1,7z"/>
+                    </svg>
+                    <div id="10-cadera-display" class="despieceDescript">
+                        <span class="h1">Cadera</span> <br><br>
+                        <span>La cadera de ternera es un corte de carne que se encuentra en la parte trasera del animal, cerca 
+                            de la parte superior de la pierna. Es una carne magra, baja en grasa y muy sabrosa que se utiliza 
+                            en una gran variedad de platos.<br><br>En la gastronomía, la cadera de ternera se utiliza a menudo 
+                            para hacer filetes y asados, ya que es una carne tierna y sabrosa. También se puede utilizar para 
+                            hacer guisos y estofados, y se puede cocinar a la parrilla o en el horno.<br><br>Además de su delicioso 
+                            sabor, la cadera de ternera es una fuente importante de proteínas de alta calidad, hierro y vitaminas 
+                            del complejo B.</span>
+                    </div>
+                </div>
+                <div id="11-rabo-container">
+                    <svg width="67px" height="336px" id="11-rabo-svgItem" style="margin-top: 65px ; margin-left: 879px">
+                        <path id="11-rabo" class="despieceItem" d="M53 168l1 25c0,2 -1,4 0,8l1 14c0,7 2,59 0,66 -2,5 -4,11 -7,17
+                        -4,12 -5,29 3,38 6,-9 2,-1 7,-5 4,-5 -1,-1 3,-3 1,-17 11,-16 3,-55 -4,-17 -1,-49 -1,-68 0,-21
+                        -4,-50 -4,-75l0 -19c0,-4 -1,-6 -1,-10 1,-7 1,-14 1,-22 1,-7 2,-11 2,-20 0,-10 0,-12 -2,-21
+                        -3,-10 -15,-30 -22,-34 -6,-2 -23,-4 -29,-4 -10,22 -13,46 10,60l16 13c4,4 9,9 12,16 7,14
+                            5,41 6,52 0,5 2,6 2,12 0,6 -1,9 -1,15z"/>
+                    </svg>
+                    <div id="11-rabo-display" class="despieceDescript">
+                        <span class="h1">Rabo</span> <br><br>
+                        <span>El rabo de ternera es un corte de carne muy popular en la gastronomía de muchas culturas. Se 
+                            trata de una carne muy sabrosa y jugosa que se encuentra en la cola del animal. Aunque es un corte 
+                            que puede ser un poco difícil de preparar, su delicioso sabor y textura hacen que valga la pena el 
+                            esfuerzo.<br><br>En la cocina, el rabo de ternera es muy versátil y se utiliza en una gran variedad 
+                            de platos. Es un ingrediente ideal para guisos y estofados, y se puede cocinar a fuego lento durante 
+                            varias horas para obtener una carne muy tierna y sabrosa. También se puede utilizar en sopas y caldos, 
+                            y su carne deshilachada puede ser utilizada como relleno para empanadas o pasteles.<br><br>Además de 
+                            su exquisito sabor, el rabo de ternera es una excelente fuente de proteínas de alta calidad, hierro y 
+                            colágeno.</span>
+                    </div>
+                </div>
+                <div id="12-tapilla-container">
+                    <svg width="70px" height="61px" id="12-tapilla-svgItem" style="margin-top: 129px ; margin-left: 842px">
+                        <path id="12-tapilla" class="despieceItem" d="M0 35c14,5 17,11 22,25 7,0 16,0 24,0 8,0 15,1 23,1 0,-21 2,-13
+                        0,-39 -2,-11 2,-7 -12,-19 -4,-3 -4,-3 -7,-3 -4,1 -5,2 -8,3 -7,2 -6,1 -20,6l-4 2c-4,2 -9,5
+                        -12,8 -3,4 -6,11 -6,16z"/>
+                    </svg>
+                    <div id="12-tapilla-display" class="despieceDescript">
+                        <span class="h1">Tapilla</span> <br><br>
+                        <span>La tapilla de ternera es un corte de carne que se encuentra en la parte posterior de la vaca, cerca 
+                            de la pierna trasera. Es un corte muy versátil y fácil de cocinar, lo que lo convierte en una opción 
+                            popular en la cocina.<br><br>En la gastronomía, la tapilla de ternera se utiliza a menudo para hacer 
+                            filetes y asados, ya que es una carne muy tierna y sabrosa. También se puede utilizar para hacer guisos 
+                            y estofados, y se puede cocinar a la parrilla o en el horno. Debido a su suavidad, la tapilla de ternera 
+                            es una carne muy apreciada por los amantes de la carne y los chefs.<br><br>Además de su delicioso sabor, 
+                            la tapilla de ternera es una buena fuente de proteínas de alta calidad, hierro y vitaminas B.</span>
+                    </div>
+                </div>
+                <div id="13-pez-container">
+                    <svg width="40px" height="75px" id="13-pez-svgItem" style="margin-top: 210px ; margin-left: 341px">
+                        <path id="13-pez" class="despieceItem" d="M40 77c0,-4 -1,-5 -1,-9 1,-8 3,-17 1,-30 -2,-13 -1,-25 -4,-38
+                        -7,2 -28,3 -32,6 -7,6 -3,23 0,30 6,12 16,24 24,33l8 6c3,2 2,2 4,2z"/>
+                    </svg>
+                    <div id="13-pez-display" class="despieceDescript">
+                        <span class="h1">Pez</span> <br><br>
+                        <span>El pez de ternera es un corte de carne procedente de la parte delantera de la ternera. 
+                            Es un corte muy jugoso y sabroso que se puede preparar de diversas maneras, como a la parrilla, en el horno 
+                            o en guisos.<br><br>Este corte de carne es una buena fuente de proteínas y vitaminas del complejo B</span>
+                    </div>
+                </div>
+                <div id="14-espaldilla-container">
+                    <svg width="112px" height="100px" id="14-espaldilla-svgItem" style="margin-top: 201px ; margin-left: 381px">
+                        <path id="14-espaldilla" class="despieceItem" d="M0 9c-1,9 3,26 3,37 43,-20 81,20 61,52l47 2c-1,-41 -7,-58 
+                        0,-100l-111 9z"/>
+                    </svg>
+                    <div id="14-espaldilla-display" class="despieceDescript">
+                        <span class="h1">Espaldilla</span> <br><br>
+                        <span>La espaldilla de ternera es un corte de carne procedente de la parte delantera del animal, cerca del 
+                            cuello y los hombros. Es un corte jugoso y lleno de sabor que se puede preparar de diversas maneras, 
+                            como guisos, estofados o a la parrilla.<br><br>Este corte de carne es una excelente fuente de proteínas 
+                            y vitaminas del complejo B</span>
+                    </div>
+                </div>
+                <div id="15-llana-container">
+                    <svg width="61px" height="53px" id="15-llana-svgItem" style="margin-top: 246px ; margin-left: 384px">
+                        <path id="15-llana" class="despieceItem" d="M0 6c0,31 -1,34 2,40 9,4 29,3 54,7 21,-42 -35,-65 -56,-47z"/>
+                    </svg>
+                    <div id="15-llana-display" class="despieceDescript">
+                        <span class="h1">Llana</span> <br><br>
+                        <span>La llana de ternera es un corte de carne magra y tierna que se encuentra en la parte trasera del animal, 
+                            cerca del lomo bajo. Es una carne muy versátil y se puede cocinar a la parrilla, asada, en guisos, 
+                            entre otras formas.<br><br>Este corte de carne es una excelente fuente de proteínas de alta calidad y 
+                            una buena fuente de hierro y zinc.</span>
+                    </div>
+                </div>
+                <div id="16-costillar-container">
+                    <svg width="116px" height="175px" id="16-costillar-svgItem" style="margin-top: 195px ; margin-left: 492px">
+                        <path id="16-costillar" class="despieceItem" d="M6 5c-4,8 -4,24 -5,35 -2,13 1,27 0,40 51,22 68,48 67,92 15,0 33,2
+                        48,3 -1,-6 -4,-12 -5,-19l-6 -53 -2 -57c-1,-11 -1,-34 0,-46l-97 5z"/>
+                    </svg>
+                    <div id="16-costillar-display" class="despieceDescript">
+                        <span class="h1">Costillar</span> <br><br>
+                        <span>El costillar de ternera es un corte de carne que se encuentra en la sección del tórax del animal. 
+                            Este corte es conocido por su sabor y textura, ya que contiene una buena cantidad de grasa intramuscular 
+                            que lo hace especialmente sabroso cuando se cocina a fuego lento.<br><br>Además, el costillar de ternera 
+                            es una excelente fuente de proteínas y vitaminas del complejo B.<br><br>Es posible cocinar el costillar de 
+                            ternera de diversas formas, como a la parrilla, en el horno o en guisos. También se puede usar para hacer 
+                            barbacoas y asados, siendo uno de los cortes más populares en estos eventos.</span>
+                    </div>
+                </div>
+                <div id="17-falda-container">
+                    <svg width="160px" height="204px" id="17-falda-svgItem" style="margin-top: 186px ; margin-left: 596px">
+                        <path id="17-falda" class="despieceItem" d="M0 9c0,16 1,30 1,46 0,14 3,77 6,90 1,7 2,14 3,20 4,33 15,11
+                        42,22 9,4 15,12 22,17 5,-1 8,-3 12,-5 15,-6 23,-14 40,-8 5,-5 8,-24 10,-32 2,-10 12,-77
+                        12,-86 0,-6 1,-4 2,-8 2,-8 6,-48 8,-52 1,-4 1,-8 2,-13l-160 9z"/>
+                    </svg>
+                    <div id="17-falda-display" class="despieceDescript">
+                        <span class="h1">Falda</span> <br><br>
+                        <span>La falda de ternera es un corte de carne que se encuentra en la sección abdominal del animal. Es un 
+                            corte muy versátil y económico, que se caracteriza por su sabor intenso y su textura fibrosa.<br><br>Este 
+                            corte de carne es ideal para preparar guisos y estofados, ya que su alto contenido de colágeno le da una 
+                            textura suave y gelatinosa cuando se cocina a fuego lento. También se puede cocinar a la parrilla o asar 
+                            para darle un sabor ahumado y delicioso.<br><br>La falda de ternera es una buena fuente de proteínas, hierro y 
+                            vitaminas del complejo B</span>
+                    </div>
+                </div>
+                <div id="18-babilla-container">
+                    <svg width="78px" height="77px" id="18-babilla-svgItem" style="margin-top: 187px ; margin-left: 748px; z-index: 1">
+                        <path id="18-babilla" class="despieceItem" d="M1 68l16 3c26,6 22,8 53,3 2,-13 7,-30 8,-44 -13,-5 -20,-10
+                        -20,-30l-38 0c-15,0 -8,-3 -14,29l-6 37c1,3 -1,0 1,2z"/>
+                    </svg>
+                    <div id="18-babilla-display" class="despieceDescript">
+                        <span class="h1">Babilla</span> <br><br>
+                        <span>La babilla de ternera es un corte de carne que se encuentra en la parte trasera de la pierna del animal. 
+                            Es un corte magro y tierno, con un sabor suave y delicado.<br><br>Este corte de carne es ideal para 
+                            preparaciones rápidas como la parrilla, la plancha o el horno, ya que no necesita mucho tiempo de cocción. 
+                            También es perfecto para cortar en tiras y usar en preparaciones de cocina asiática como el salteado.<br><br>
+                            La babilla de ternera es una buena fuente de proteínas, hierro y zinc.</span>
+                    </div>
+                </div>
+                <div id="19-tapa-container">
+                    <svg width="50px" height="50px" id="19-tapa-svgItem" style="margin-top: 167px ; margin-left: 810px; z-index: 2">
+                        <path id="19-tapa" class="despieceItem" d="M21 0c-12,3 -22,15 -21,28 4,32 52,26 49,-6 -1,-13 -17,-24 -28,-22z"/>
+                    </svg>
+                    <div id="19-tapa-display" class="despieceDescript">
+                        <span class="h1">Tapa</span> <br><br>
+                        <span>La tapa trasera de ternera es un corte de carne que se encuentra en la parte posterior del animal, en la 
+                            parte superior de las patas traseras. Es un corte magro y tierno, con un sabor intenso y jugoso.<br><br>Este 
+                            corte de carne es ideal para preparaciones rápidas como el salteado, la plancha o la parrilla, ya que se cocina 
+                            rápidamente debido a su bajo contenido de colágeno. También es perfecto para cortar en filetes y cocinar a la 
+                            parrilla o a la plancha.<br><br>La tapa trasera de ternera es una buena fuente de proteínas, hierro y vitaminas 
+                            del complejo B.</span>
+                    </div>
+                </div>
+                <div id="20-rabilloCadera-container">
+                    <svg width="91px" height="120px" id="20-rabilloCadera-svgItem" style="margin-top: 258px ; margin-left: 726px; z-index: 1">
+                        <path id="20-rabilloCadera" class="despieceItem" d="M0 121c8,-2 10,-4 17,-8 41,-27 54,-51 71,-95 1,-3 2,-7 3,-11 -11,1 
+                        -17,5 -37,0 -11,-2 -22,-5 -34,-7 2,16 -3,21 -3,31 -1,11 -8,48 -10,61 -2,12 -4,20 -7,29z"/>
+                    </svg>
+                    <div id="20-rabilloCadera-display" class="despieceDescript">
+                        <span class="h1">Rabillo cadera</span> <br><br>
+                        <span>El rabillo de la cadera de ternera es un corte jugoso y tierno, ubicado en la parte trasera del animal. Es una pieza 
+                            pequeña y con poco contenido graso, lo que la hace ideal para preparaciones rápidas y saludables.<br><br>Este corte se 
+                            puede utilizar en preparaciones como guisos, salteados, asados o incluso en la parrilla. Su sabor es delicado y su textura 
+                            es suave, lo que lo hace perfecto para combinaciones con salsas y especias.<br><br>Además, el rabillo de la cadera es una 
+                            excelente fuente de proteínas y vitaminas.</span>
+                    </div>
+                </div>
+                <div id="21-contra-container">
+                    <svg width="124px" height="181px" id="21-contra-svgItem" style="margin-top: 193px ; margin-left: 763px">
+                        <path id="21-contra" class="despieceItem" d="M66 25l-2 23c-9,42 -21,77 -51,107l-13 13c4,0 10,-1 13,0 1,0
+                        10,4 13,6 11,6 80,10 98,4 -12,-59 -14,-94 -13,-153 0,-8 1,-16 0,-25l-11 0c-6,18 -13,25 -34,25z"/>
+                    </svg>
+                    <div id="21-contra-display" class="despieceDescript">
+                        <span class="h1">Contra</span> <br><br>
+                        <span>La contra trasera de ternera es un corte de carne ubicado en la parte posterior del animal, justo encima de la babilla. 
+                            Es una pieza de tamaño mediano, magra y con poco contenido de grasa, lo que la hace perfecta para preparaciones saludables.
+                            <br><br>Este corte se puede utilizar para preparaciones como guisos, asados, salteados o incluso en la parrilla. Su sabor 
+                            es suave y su textura es tierna, lo que lo hace ideal para marinar con diferentes especias y sabores.<br><br>Además, la 
+                            contra trasera de ternera es una excelente fuente de proteínas, hierro y otros nutrientes esenciales.</span>
+                    </div>
+                </div>
+                <div id="22-redondo-container">
+                    <svg width="36px" height="171px" id="22-redondo-svgItem" style="margin-top: 193px ; margin-left: 877px">
+                        <path id="22-redondo" class="despieceItem" d="M13 174c1,-16 11,-41 15,-58 1,-4 1,-7 2,-11 1,-4 1,-1 1,-5 0,-4 
+                        0,-4 1,-6 3,-14 5,-42 4,-58 -1,-5 1,-27 -1,-35l-34 -1c-3,60 2,154 12,174z"/>
+                    </svg>
+                    <div id="22-redondo-display" class="despieceDescript">
+                        <span class="h1">Redondo</span> <br><br>
+                        <span>El redondo de ternera es un corte de carne que se encuentra en la parte trasera de la pierna del animal. Es una pieza de 
+                            tamaño mediano, magra y con un bajo contenido de grasa. Es un corte muy versátil y se puede preparar de muchas maneras 
+                            diferentes.<br><br>El redondo de ternera se puede cortar en filetes finos y se puede cocinar en la sartén, a la parrilla o 
+                            al horno. También se puede utilizar para preparar guisos, estofados y asados. Es un corte que se beneficia de una cocción 
+                            lenta y a baja temperatura para conseguir una textura tierna y jugosa.<br><br>Además de ser delicioso, el redondo de ternera 
+                            es una excelente fuente de proteínas y nutrientes esenciales como hierro, zinc y vitaminas del grupo B.</span>
+                    </div>
+                </div>
+                <div id="23-pecho-container">
+                    <svg width="157px" height="117px" id="23-pecho-svgItem" style="margin-top: 260px ; margin-left: 229px">
+                        <path id="23-pecho" class="despieceItem" d="M0 31c2,3 5,5 8,8l29 34c3,3 5,5 7,9l4 5c0,0 1,1 1,1l10 12c6,6 
+                        13,8 19,12 5,4 5,6 12,3 20,-7 17,-4 40,-8 10,-1 19,-2 29,-3 -4,-29 -5,-40 -5,-70 -27,-15 
+                        -21,-34 -47,-34 -26,0 -91,7 -107,31z"/>
+                    </svg>
+                    <div id="23-pecho-display" class="despieceDescript">
+                        <span class="h1">Pecho</span> <br><br>
+                        <span>El pecho de ternera es un corte de carne que se encuentra en la parte inferior del animal, cerca de la 
+                            zona delantera. Es una carne con mucho sabor que, aunque es algo más dura, se puede cocinar de diversas 
+                            maneras para ablandarla y hacerla tierna.<br><br>Entre las aplicaciones de este corte de carne, destaca 
+                            su uso para guisos y estofados, así como para preparaciones al horno o a la parrilla. Además, se utiliza 
+                            en la elaboración de algunos embutidos y platos tradicionales de la gastronomía local.</span>
+                    </div>
+                </div>
+                <div id="24-brazuelo-container">
+                    <svg width="121px" height="70px" id="24-brazuelo-svgItem" style="margin-top: 295px ; margin-left: 385px">
+                        <path id="24-brazuelo" class="despieceItem" d="M7 69c40,3 75,-7 114,-2l-10 -42c-3,-21 -2,-14 -16,-16l-44 
+                        -1c-12,-1 -27,-2 -39,-5 -3,-1 -9,-2 -12,-3 0,30 4,42 7,69z"/>
+                    </svg>
+                    <div id="24-brazuelo-display" class="despieceDescript">
+                        <span class="h1">Brazuelo</span> <br><br>
+                        <span>El brazuelo de ternera es una pieza de carne que se encuentra en la parte inferior del animal, en la 
+                            extremidad delantera. Es una carne con mucho sabor y con un alto contenido de colágeno, lo que la hace 
+                            ideal para guisos y estofados.<br><br>Entre sus aplicaciones, destaca su uso para la elaboración de guisos 
+                            tradicionales, como el estofado de ternera o el cocido. Debido a su alto contenido de colágeno, es una carne 
+                            que se beneficia de una cocción lenta y prolongada, lo que permite que los tejidos se ablanden y la carne 
+                            adquiera una textura jugosa y tierna.<br><br>Además, el brazuelo de ternera también se puede utilizar 
+                            para la elaboración de hamburguesas, albóndigas y otras preparaciones de carne picada. También se puede 
+                            cocinar a la parrilla o a la plancha, aunque es importante tener en cuenta que puede resultar un poco duro 
+                            si no se cocina adecuadamente.</span>
+                    </div>
+                </div>
+                <div id="25-aleta-container">
+                    <svg width="63px" height="86px" id="25-aleta-svgItem" style="margin-top: 282px ; margin-left: 495px">
+                        <path id="25-aleta" class="despieceItem" d="M17 81c12,2 31,5 45,5 6,-38 -25,-77 -62,-86 2,6 2,15 3,22 4,18
+                        4,21 9,40l5 19z"/>
+                    </svg>
+                    <div id="25-aleta-display" class="despieceDescript">
+                        <span class="h1">Aleta</span> <br><br>
+                        <span>La aleta de ternera es una pieza que se encuentra en la parte inferior del animal, es una carne magra y 
+                            fibrosa que se caracteriza por tener un sabor intenso y una textura firme. Se encuentra cerca de la parte 
+                            trasera del animal y se utiliza para preparar una variedad de platos. Debido a su baja cantidad de grasa, 
+                            la aleta es una buena opción para aquellos que buscan una alternativa más saludable a las carnes más 
+                            grasas.<br><br>Una de las formas más populares de cocinar la aleta de ternera es asarla al horno, aunque 
+                            también puede ser cocida a la parrilla o en una sartén. Su textura firme y magra la convierte en una excelente 
+                            opción para cortar en filetes o para ser utilizada en guisos y estofados. La aleta de ternera es una carne 
+                            muy versátil y puede ser utilizada en una gran variedad de recetas, como por ejemplo en tacos, empanadas, 
+                            hamburguesas, entre otros.</span>
+                    </div>
+                </div>
+                <div id="26-morcilloAnt-container">
+                    <svg width="144px" height="210px" id="26-morcilloAnt-svgItem" style="margin-top: 372px ; margin-left: 310px">
+                        <path id="26-morcilloAnt" class="despieceItem" d="M86 45c6,10 4,36 8,47l3 24c1,38 -4,28 -7,49 -2,8 -4,18 -3,26 13,4
+                        23,4 36,1 5,-1 10,-1 13,-5 2,-4 1,-17 4,-27 2,-4 5,-5 4,-16 -3,-16 -4,-31 -6,-47 -1,-8 1,-14
+                        -1,-23 -3,-28 2,-49 3,-74 -10,0 -19,1 -29,1 -10,0 -24,0 -35,0l-40 4c-7,1 -13,1 -20,2 -4,1 -12,4
+                        -16,7 2,8 5,10 9,39 4,26 3,7 3,39 0,8 1,13 1,23l-1 26c0,11 3,4 0,24 -2,20 -12,29 -12,40l4 
+                        2c11,3 37,7 39,-7 2,-11 1,-13 10,-19 9,-5 3,-9 3,-21 0,-5 -1,-5 -2,-9 0,-2 1,-5 1,-8 0,-5 
+                        -1,-7 -1,-10 0,-3 1,-5 1,-9 0,-14 -2,-19 3,-37 2,-7 1,-11 4,-17 2,-7 5,-21 11,-26 1,-1 0,0 
+                        2,-1 2,-1 9,0 11,2z"/>
+                    </svg>
+                    <div id="26-morcilloAnt-display" class="despieceDescript">
+                        <span class="h1">Morcillo anterior</span> <br><br>
+                        <span>El morcillo anterior de ternera es una de las piezas más valoradas en la gastronomía debido a su sabor intenso 
+                            y su textura suave. Se trata de una carne muy jugosa y tierna que se encuentra en la parte delantera de la res, 
+                            cerca de las patas delanteras.<br><br>Esta pieza se puede cocinar de diversas formas, ya sea guisado, asado o cocido. 
+                            Es perfecta para preparar platos de cuchara como el tradicional cocido o la olla podrida. También se puede cocinar a 
+                            fuego lento en una cazuela con verduras y vino tinto para obtener un guiso espectacular.<br><br>Además, el morcillo 
+                            anterior de ternera es una excelente fuente de proteínas y hierro.</span>
+                    </div>
+                </div>
+                <div id="27-culataContra-container">
+                    <svg width="163px" height="69px" id="27-culataContra-svgItem" style="margin-top: 366px ; margin-left: 733px">
+                        <path id="27-culataContra" class="despieceItem" d="M18 59c15,-1 28,1 42,4 7,1 11,1 18,4 0,0 0,0 1,0 0,0 0,1 0,1l1 0c1,0 
+                        1,0 1,1 0,0 0,0 1,0 2,0 0,0 3,-1 9,-3 12,-9 40,-16 14,-3 25,-4 37,3 1,-11 -1,-35 -5,-43 -4,0 -9,1 
+                        -13,2 -6,1 -24,2 -30,1 -9,-1 -20,4 -44,-1 -4,-1 -9,-2 -13,-4 -14,-7 -22,-16 -38,-5l-11 7c-6,4 -12,-2 
+                        -4,13 1,3 3,7 5,11 3,7 8,16 9,23z"/>
+                    </svg>
+                    <div id="27-culataContra-display" class="despieceDescript">
+                        <span class="h1">Culata de contra</span> <br><br>
+                        <span>La culata de la contra es una parte muy sabrosa de la ternera que se encuentra en la zona trasera del animal. 
+                            Es una pieza con una buena cantidad de carne y grasa, lo que la hace ideal para preparar guisos y estofados. 
+                            También se puede cocinar a la parrilla o a la brasa, siempre y cuando se tenga en cuenta que necesita un tiempo 
+                            de cocción mayor que otras partes más tiernas del animal.<br><br>Para aprovechar al máximo esta pieza de ternera, 
+                            es importante cocinarla a fuego lento y con líquidos para que se ablande y se impregne de sabor. Con un poco de 
+                            paciencia y las técnicas culinarias adecuadas, se puede obtener un plato delicioso y reconfortante que seguramente 
+                            satisfará a los amantes de la carne.</span>
+                    </div>
+                </div>
+                <div id="28-morcilloPost-container">
+                    <svg width="145px" height="160px" id="28-morcilloPost-svgItem" style="margin-top: 422px ; margin-left: 748px">
+                        <path id="28-morcilloPost" class="despieceItem" d="M55 114c0,-5 1,-8 1,-13 0,-4 -2,-8 -2,-12 0,-4 -1,-10 0,-13 1,-12 
+                        -2,-22 -1,-26 0,-2 3,-10 3,-11 2,-6 1,-6 3,-10l2 -7c1,0 4,1 5,-1 0,1 7,6 9,10 10,18 14,31 21,48 
+                        2,6 1,9 1,16 1,7 3,5 2,14 -1,5 -1,11 -3,15 -2,6 -6,21 -4,28 0,0 0,0 0,0 0,1 1,1 1,1 2,1 0,0 2,1 
+                        9,4 28,5 31,2 4,-4 4,-18 4,-25 1,-7 5,-13 12,-16 0,-14 -1,-6 -1,-14 -2,-15 -5,-29 -3,-43 1,-7 1,-7 
+                        1,-13 -2,-17 6,-34 6,-40 -6,-5 -2,-3 -13,-4 -8,-2 -22,0 -30,2 -6,2 -6,3 -12,5 -4,2 -6,3 -11,6 -6,2 
+                        -12,4 -13,6 -5,-3 -10,-6 -16,-6l-31 -5c-10,-1 -5,2 -15,-2 0,4 2,9 2,13l4 42c0,25 6,31 -4,54 -1,4 
+                        -2,7 -4,11 -5,18 0,16 9,18 4,1 9,1 13,1 15,-3 16,2 19,-13 4,-14 1,-14 12,-19z"/>
+                    </svg>
+                    <div id="28-morcilloPost-display" class="despieceDescript">
+                        <span class="h1">Morcillo posterior</span> <br><br>
+                        <span>El morcillo posterior es una pieza de carne de ternera que se encuentra en la parte trasera del animal, 
+                            cerca de la cadera. Se trata de un corte con mucho sabor debido a la cantidad de grasa y colágeno que contiene, 
+                            lo que lo hace ideal para guisos y estofados.<br><br>Una de las formas más populares de preparar el morcillo posterior 
+                            es cocinarlo a fuego lento durante varias horas para que la carne se ablande y los sabores se mezclen. Se puede 
+                            acompañar con verduras, patatas o arroz para crear un plato completo y delicioso.<br><br>Además, el morcillo posterior 
+                            también es una pieza muy utilizada en la elaboración de caldos y sopas debido a su alto contenido de gelatina, que 
+                            aporta cuerpo y sabor a estos platos.</span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <br><br><br>
+    <div #herramientas id="herramientas">
+        <fieldset>
+            <legend>CUCHILLERÍA</legend>
+            <table>
+                <tr>
+                    <th colspan="2">Deshuesador</th>
+                </tr>
+                <tr>
+                    <td><img src="../../../assets/images/cuchilleria/deshuesador.png" alt="deshuesador"></td>
+                    <td>Diseñado específicamente para separar la carne del hueso, este cuchillo cuenta con una 
+                        hoja delgada que permite una mayor precisión y control al cortar. Su mango 
+                        ergonómico y antideslizante proporciona un agarre cómodo y seguro, incluso cuando se 
+                        trabaja con carnes resbaladizas o difíciles de cortar. Con un buen mantenimiento y 
+                        afilado regular, el cuchillo deshuesador de carnicero puede durar toda una vida y 
+                        convertirse en una herramienta indispensable para cualquier amante de la carne.</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Macheta</th>
+                </tr>
+                <tr>
+                    <td><img src="../../../assets/images/cuchilleria/macheta.png" alt="macheta"></td>
+                    <td>Con su hoja larga y ancha, la macheta de carnicero es capaz de cortar fácilmente a 
+                        través de huesos y cartílagos, lo que la convierte en una herramienta esencial en 
+                        la industria cárnica. Su hoja de acero resistente y su mango ergonómico permiten un 
+                        agarre cómodo y seguro durante largas horas de trabajo. La macheta de carnicero es una 
+                        herramienta duradera y confiable que puede durar toda una vida con un buen mantenimiento 
+                        y afilado regular.</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Chuletero</th>
+                </tr>
+                <tr>
+                    <td><img src="../../../assets/images/cuchilleria/chuletero.png" alt="Chuletero"></td>
+                    <td>Es una herramienta especializada que se utiliza para cortar y preparar carne de res, 
+                        cerdo y cordero en piezas más pequeñas para su consumo. Con su hoja delgada y afilada, 
+                        el cuchillo chuletero de carnicero es capaz de cortar a través de la carne con facilidad 
+                        y precisión.</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Jamonero</th>
+                </tr>
+                <tr>
+                    <td><img src="../../../assets/images/cuchilleria/jamonero.png" alt="jamonero"></td>
+                    <td>El cuchillo jamonero es una herramienta especializada diseñada específicamente para 
+                        cortar jamón. Con su hoja larga y delgada, el cuchillo jamonero es capaz de cortar 
+                        lonchas finas y uniformes de jamón con facilidad y precisión. Su hoja de acero inoxidable 
+                        resistente y duradero permite un mantenimiento y afilado fácil, y su mango ergonómico 
+                        proporciona un agarre cómodo y seguro durante largas horas de trabajo.</td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+</div>

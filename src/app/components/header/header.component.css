@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.custom-nav-bar{
+    background-image: url("../../../assets/DarkWood.jpg");
+    background-repeat: none;
+    background-size: cover;
+    border-bottom: 3px groove #AC4545;
+
+}
+
+.custom-nav-bar-text{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    background: linear-gradient(#AC4545,#AC4545);
+    background-position: center 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition:all 0.5s;
+}
+
+.custom-nav-bar-text:hover{
+    background-size: 100% 2px;
+    color: #AC4545;
+}
+
+.custom-nav-bar-text-selected{
+    background-size: 100% 2px;
+    color: #AC4545;
+}

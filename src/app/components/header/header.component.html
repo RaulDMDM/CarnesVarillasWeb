@@ -1,0 +1,44 @@
+<nav
+  class="navbar navbar-expand-lg p-3 custom-nav-bar d-flex justify-content-evenly"
+>
+  <a href="/" class="navbar-brand">
+    <img src="../../../assets/logo.png" alt="" style="height: 100px" />
+  </a>
+  <ul class="navbar-nav d-flex justify-content-evenly w-50">
+    <li class="nav-item">
+      <a class="nav-link custom-nav-bar-text" 
+      [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'inicio'}"
+      href="/"
+      id="inicio"
+      (click)="NavBtnSelected($event)">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link custom-nav-bar-text" 
+      [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'catalogo'}"
+      routerLink="/catalogo"
+      id="catalogo"
+      (click)="NavBtnSelected($event)">Catálogo</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link custom-nav-bar-text" 
+      [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'aprende'}"
+      routerLink="/aprende"
+      id="aprende"
+      (click)="NavBtnSelected($event)">Aprende</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link custom-nav-bar-text"
+      [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'snosotros'}"
+      routerLink="/snosotros"
+      id="snosotros"
+      (click)="NavBtnSelected($event)">Sobre nosotros</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link custom-nav-bar-text"
+      [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'contacto'}"
+      routerLink="/contacto"
+      id="contacto"
+      (click)="NavBtnSelected($event)">Contacto</a>
+    </li>
+  </ul>
+</nav>

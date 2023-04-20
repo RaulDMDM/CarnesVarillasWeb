@@ -1,0 +1,131 @@
+<div id="Pedidos">
+    <h1 style="color:white; text-align: center;">CONTROL DE PEDIDOS</h1>
+    <ng-container *ngFor="let pedido of listaPedClient">
+        <ng-container *ngIf="pedido.estado != 'FINALIZADO'">
+            <table style="margin: auto">
+                <tr>
+                    <th colspan="2">Datos cliente</th>
+                    <th colspan="2">Estado pedido</th>
+                </tr>
+                <tr>
+                    <td colspan="2">ID: {{pedido.id_pedido}}<br>
+                                    Nombre cliente: {{pedido.nombre_cliente}}<br>
+                                    Teléfono: {{pedido.telefono_cliente}}<br>
+                                    Email: {{pedido.email_cliente}}<br>
+                                    Fecha solicitud: {{convFecha(pedido.fecha_solicitud)}}<br>
+                                    Fecha recogida: {{convFecha(pedido.fecha_recogida)}}</td>
+                    <td colspan="2" id="field{{pedido.id_pedido}}">{{pedido.estado}}
+                        <select name="statusSelect" id="statusSelect" style="width: 20px;" (change)="updtProdStatus($event, pedido.id_pedido)">
+                            <option disbled selected value></option>
+                            <option value="solicitado">SOLICITADO</option>
+                            <option value="enProceso">EN PROCESO</option>
+                            <option value="pteEntrega">PTE ENTREGA</option>
+                            <option value="finalizado">FINALIZADO</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Cantidad</th>
+                    <th>Importe</th>
+                </tr>
+                <ng-container *ngFor="let producto of listaProdPedido">
+                    <tr *ngIf="producto.id_pedido == pedido.id_pedido">
+                        <td>{{producto.nombre_producto}}</td>
+                        <td>{{producto.grupo_producto}}</td>
+                        <td>{{producto.cantidad_producto}}</td>
+                        <td>{{producto.importe_producto}} €</td>
+                    </tr>
+                </ng-container>
+                    <tr>
+                        <td colspan="2">TOTAL</td>
+                        <td colspan="2">{{pedido.total_pedido}} €</td>
+                    </tr>
+            </table>
+        </ng-container>
+    </ng-container>
+</div>
+<div id="ContStock">
+    <h1 style="color:white; text-align: center;">CONTROL DE STOCK</h1>
+    <table style="margin: auto">
+        <tr>
+            <th>Producto</th>
+            <th>Grupo</th>
+            <th>Cantidad disponible</th>
+            <th>Unidad de medida</th>
+            <th>Es personalizable</th>
+            <th>Precio orientativo</th>
+        </tr>
+        <ng-container *ngFor="let producto of listaProductos">
+            <tr (click)="editarProducto(producto.nombre_producto!)">
+                <td>{{producto.nombre_producto}}</td>
+                <td>{{producto.grupo_producto}}</td>
+                <td>{{producto.cantidad_disponible}}</td>
+                <td>{{producto.unidad_medida}}</td>
+                <td>{{producto.es_personalizable}}</td>
+                <td>{{producto.precio_orientativo}} €</td>
+                
+            </tr>
+            <tr id="edit{{producto.nombre_producto}}" style="display: none">
+                <td><input id="nombreProd{{producto.nombre_producto}}" type="text" value="{{producto.nombre_producto}}"></td>
+                <td><input id="grupoProd{{producto.nombre_producto}}" type="text" value="{{producto.grupo_producto}}"></td>
+                <td><input id="cantProd{{producto.nombre_producto}}" type="text" value="{{producto.cantidad_disponible}}"></td>
+                <td><input id="unitProd{{producto.nombre_producto}}" type="text" value="{{producto.unidad_medida}}"></td>
+                <td><input id="personProd{{producto.nombre_producto}}" type="text" value="{{producto.es_personalizable}}"></td>
+                <td><input id="precioProd{{producto.nombre_producto}}" type="text" value="{{producto.precio_orientativo}}"></td>   
+            </tr>
+            <tr id="btn{{producto.nombre_producto}}" style="display: none">
+                <td colspan="6">
+                <button (click)="guardarEdit(producto)">Guardar</button>
+                <button (click)="eliminarProducto(producto)">Eliminar</button> 
+                </td>
+            </tr>
+        </ng-container>
+    </table>
+
+    <table style="margin: auto; margin-top: 10px">
+        <tr>
+            <th style="background-color: brown;" colspan="6">Añadir producto</th>
+        </tr>
+        <tr style="background-color: rgb(148, 74, 74);">
+            <th >Producto</th>
+            <th style="width: 16%">Grupo</th>
+            <th style="width: 16%">Cantidad disponible</th>
+            <th style="width: 16%">Unidad de medida</th>
+            <th style="width: 16%">Es personalizable</th>
+            <th style="width: 16%">Precio orientativo</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="inNombreProducto"></td>
+            <td>
+                <select name="grupo" id="inGrupoProducto">
+                    <option disbled selected value></option>
+                    <option value="cerdo">Cerdo</option>
+                    <option value="cordero">Cordero</option>
+                    <option value="embutido">Embutido</option>
+                    <option value="ternera">Ternera</option>
+                </select>
+            </td>
+            <td><input type="number" id="inCantDisp"></td>
+            <td>
+                <select name="unidadMedida" id="inUnidadMedida">
+                    <option disbled selected value></option>
+                    <option value="gr">Gr</option>
+                    <option value="uds">Uds</option>
+                </select>
+            </td>
+            <td>
+                <select name="personalizable" id="inPersonalizable">
+                    <option disbled selected value></option>
+                    <option value="text">Si</option>
+                    <option value="text">No</option>
+                </select>
+            </td>
+            <td><input type="number" id="inPrecio"></td>
+        </tr>
+        <tr>
+            <td colspan="6"><button class="m-2 w-25" (click)="aniadirProductos()">Guardar</button></td>
+        </tr>
+    </table>
+</div>

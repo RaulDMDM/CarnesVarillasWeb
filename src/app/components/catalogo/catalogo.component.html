@@ -1,0 +1,136 @@
+<div class="container p-0 pb-5" style="background: rgba(0, 0, 0, 0.9);">
+    <div id="ribbonContainer" class="sticky-top" style="height: 100px; width: auto; margin-bottom: 30px; top: 144px">
+        <span class="titlesRibbon" 
+        id="ribbonTernera"
+        [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonTernera'}"
+        (click)="scrollAndSelect(ternera, $event)">Ternera</span>
+        <span class="titlesRibbon" 
+        id="ribbonCerdo"
+        [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonCerdo'}"
+        (click)="scrollAndSelect(cerdo, $event)">Cerdo</span>
+        <span class="titlesRibbon" 
+        id="ribbonCordero"
+        [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonCordero'}"
+        (click)="scrollAndSelect(cordero, $event)">Cordero</span>
+        <span class="titlesRibbon" 
+        id="ribbonEmbutido"
+        [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonEmbutido'}"
+        (click)="scrollAndSelect(embutido, $event)">Embutidos</span>
+    </div>
+    <fieldset #ternera id="ternera">
+        <legend>Ternera</legend>
+        <table id="terneraTable">
+            <thead>
+                <th>Producto</th>
+                <th>Cantidad disponible</th>
+                <th>Precio orientativo</th>
+                <th>Cantidad seleccionada</th>
+                <th>Añadir</th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let producto of listaProductos">
+                    <tr *ngIf="producto.grupo_producto == 'ternera'">
+                        <td>{{producto.nombre_producto}} </td>
+                        <td>{{producto.cantidad_disponible}} {{producto.unidad_medida}}</td>
+                        <td>{{producto.precio_orientativo}} €</td>
+                        <td><input #cantidad type="number" value=0></td>
+                        <td><button (click)="addProducto(producto.nombre_producto,
+                            producto.grupo_producto, 
+                            producto.unidad_medida, 
+                            producto.precio_orientativo, 
+                            producto.cantidad_disponible,
+                            cantidad.value)">Añadir al carrito</button></td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <fieldset #cerdo id="cerdo">
+        <legend>Cerdo</legend>
+        <table id="cerdoTable">
+            <thead>
+                <th>Producto</th>
+                <th>Cantidad disponible</th>
+                <th>Precio orientativo</th>
+                <th>Cantidad seleccionada</th>
+                <th>Añadir</th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let producto of listaProductos" >
+                        <tr *ngIf="producto.grupo_producto == 'cerdo'">
+                            <td>{{producto.nombre_producto}}</td>
+                            <td>{{producto.cantidad_disponible}} {{producto.unidad_medida}}</td>
+                            <td>{{producto.precio_orientativo}} €</td>
+                            <td><input #cantidad type="number" value=0></td>
+                            <td><button (click)="addProducto(producto.nombre_producto, 
+                                producto.grupo_producto, 
+                                producto.unidad_medida, 
+                                producto.precio_orientativo, 
+                                producto.cantidad_disponible, 
+                                cantidad.value)">Añadir al carrito</button></td>
+                        </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <fieldset #cordero id="cordero">
+        <legend>Cordero</legend>
+        <table id="corderoTable">
+            <thead>
+                <th>Producto</th>
+                <th>Cantidad disponible</th>
+                <th>Precio orientativo</th>
+                <th>Cantidad seleccionada</th>
+                <th>Añadir</th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let producto of listaProductos" >
+                        <tr *ngIf="producto.grupo_producto == 'cordero'">
+                            <td>{{producto.nombre_producto}}</td>
+                            <td>{{producto.cantidad_disponible}} {{producto.unidad_medida}}</td>
+                            <td>{{producto.precio_orientativo}} €</td>
+                            <td><input #cantidad type="number" value=0></td>
+                            <td><button (click)="addProducto(producto.nombre_producto, 
+                                producto.grupo_producto, 
+                                producto.unidad_medida, 
+                                producto.precio_orientativo, 
+                                producto.cantidad_disponible, 
+                                cantidad.value)">Añadir al carrito</button></td>
+                        </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <fieldset #embutido id="embutido">
+        <legend>Embutido</legend>
+        <table id="embutidoTable">
+            <thead>
+                <th>Producto</th>
+                <th>Cantidad disponible</th>
+                <th>Precio orientativo</th>
+                <th>Cantidad seleccionada</th>
+                <th>Añadir</th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let producto of listaProductos" >
+                        <tr *ngIf="producto.grupo_producto == 'embutido'">
+                            <td>{{producto.nombre_producto}}</td>
+                            <td>{{producto.cantidad_disponible}} {{producto.unidad_medida}}</td>
+                            <td>{{producto.precio_orientativo}} €</td>
+                            <td><input id="cantidad" #cantidad type="number" value=0></td>
+                            <td><button (click)="addProducto(producto.nombre_producto, 
+                                producto.grupo_producto, 
+                                producto.unidad_medida, 
+                                producto.precio_orientativo, 
+                                producto.cantidad_disponible, 
+                                cantidad.value)">Añadir al carrito</button></td>
+                        </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </fieldset>
+</div>
+<app-carrito [listadoSeleccion]="listadoSeleccion"></app-carrito>

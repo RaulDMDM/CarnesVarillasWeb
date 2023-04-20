@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.row{
+    margin: 0;
+}
+.sn-icon{
+    width: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tituloFooter{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #964747;
+}
+
+.textoFooter{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: white;
+}

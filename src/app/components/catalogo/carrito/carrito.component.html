@@ -1,0 +1,44 @@
+<div class="carr-container" *ngIf="listadoSeleccion.length != 0">
+  <div class="carr-button">
+    <img
+      src="../../../../assets/carrito.png"
+      alt="carrito"
+      style="width: 40px; height: auto"/>
+  </div>
+  <div id="listaCarrito" style="background-color: black; width: 500px; height: auto;">
+        <table class="carrito-tabla">
+          <thead>
+            <th>Desglose</th>
+            <th>Cantidad sel.</th>
+            <th>Total</th>
+            <th></th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let producto of listadoSeleccion" #filaProducto>
+                <td style="text-align: left; padding-left: 20px; font-size: 12px;">{{producto.nombre_producto}}<br>
+                  {{producto.grupo_producto}}<br><span style="font-size: 9px;color: darkgrey;">{{producto.precio_producto}}€ Kg/Ud</span></td>
+                <td>{{producto.cant_seleccionada}} {{producto.unidad_producto}}</td>
+                <td>{{producto.total_producto}} €</td>
+                <td style="width: 10%"><button style="border-radius: 0;" (click)="eliminarRegistro(filaProducto, producto.total_producto!)">X</button></td>
+              </tr>
+              <tr>
+                <td colspan="2"><button (click)="enableForm = true">Realizar pedido</button></td>
+                <td style="font-size: 20px; text-decoration: underline;">{{total}} €</td>
+              </tr>
+          </tbody>
+        </table>
+        <fieldset style="width: 90%;height: auto;" class="my-4" *ngIf="enableForm == true">
+          <legend>Formulario de envio</legend>
+          <form (ngSubmit)="okPedido(nombreCliente.value, DNICliente.value, telCliente.value, mailCliente.value, fechaRecogida.value)" style="font-size: 15px; text-align: center;">
+            <div style="text-align: left;">
+              <label for="nombreCliente">Nombre</label><input type="text" id="nombreCliente" #nombreCliente> <br>
+              <label for="DNICliente">DNI</label><input type="text" id="DNICliente" #DNICliente><br>
+              <label for="telCliente">Teléfono</label><input type="tel" id="telCliente" #telCliente><br>
+              <label for="mailCliente">Correo</label><input type="email" id="mailCliente" #mailCliente><br>
+              <label for="fechaRecogida">Fecha solicitud recogida</label><input type="date" id="fechaRecogida" min="{{fechaRecogidaDef}}" #fechaRecogida><br>
+            </div>
+              <button type="button" (click)="okPedido(nombreCliente.value, DNICliente.value, telCliente.value, mailCliente.value, fechaRecogida.value)">Confirmar pedido</button>
+          </form>
+        </fieldset>
+  </div>
+</div>
