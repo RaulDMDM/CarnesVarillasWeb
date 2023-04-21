@@ -1,0 +1,14 @@
+:host{
+    display: flex;
+    min-height: calc(100vh - 318px);
+}
+
+#contacto{
+    width: 50%;
+    height: auto;
+}
+
+#ubicacion{
+    width: 50%;
+    height: auto;
+}
