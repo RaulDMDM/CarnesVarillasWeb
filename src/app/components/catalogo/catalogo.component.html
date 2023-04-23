@@ -1,5 +1,5 @@
 <div class="container p-0 pb-5" style="background: rgba(0, 0, 0, 0.9);">
-    <div id="ribbonContainer" class="sticky-top" style="height: 100px; width: auto; margin-bottom: 30px; top: 144px">
+    <div id="ribbonContainer" class="sticky-top" style="height: 100px; width: auto; margin-bottom: 30px; top: 144px;">
         <span class="titlesRibbon" 
         id="ribbonTernera"
         [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonTernera'}"
@@ -12,6 +12,10 @@
         id="ribbonCordero"
         [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonCordero'}"
         (click)="scrollAndSelect(cordero, $event)">Cordero</span>
+        <span class="titlesRibbon" 
+        id="ribbonElaborados"
+        [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonElaborados'}"
+        (click)="scrollAndSelect(elaborados, $event)">Elaborados</span>
         <span class="titlesRibbon" 
         id="ribbonEmbutido"
         [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonEmbutido'}"
@@ -39,6 +43,7 @@
                             producto.unidad_medida, 
                             producto.precio_orientativo, 
                             producto.cantidad_disponible,
+                                producto.es_personalizable, 
                             cantidad.value)">Añadir al carrito</button></td>
                     </tr>
                 </ng-container>
@@ -68,6 +73,7 @@
                                 producto.unidad_medida, 
                                 producto.precio_orientativo, 
                                 producto.cantidad_disponible, 
+                                producto.es_personalizable, 
                                 cantidad.value)">Añadir al carrito</button></td>
                         </tr>
                 </ng-container>
@@ -97,6 +103,37 @@
                                 producto.unidad_medida, 
                                 producto.precio_orientativo, 
                                 producto.cantidad_disponible, 
+                                producto.es_personalizable, 
+                                cantidad.value)">Añadir al carrito</button></td>
+                        </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <fieldset #elaborados id="elaborados">
+        <legend>Elaborados</legend>
+        <table id="elaboradosTable">
+            <thead>
+                <th>Producto</th>
+                <th>Cantidad disponible</th>
+                <th>Precio orientativo</th>
+                <th>Cantidad seleccionada</th>
+                <th>Añadir</th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let producto of listaProductos" >
+                        <tr *ngIf="producto.grupo_producto == 'elaborados'">
+                            <td>{{producto.nombre_producto}}</td>
+                            <td>{{producto.cantidad_disponible}} {{producto.unidad_medida}}</td>
+                            <td>{{producto.precio_orientativo}} €</td>
+                            <td><input id="cantidad" #cantidad type="number" value=0></td>
+                            <td><button (click)="addProducto(producto.nombre_producto, 
+                                producto.grupo_producto, 
+                                producto.unidad_medida, 
+                                producto.precio_orientativo, 
+                                producto.cantidad_disponible,
+                                producto.es_personalizable, 
                                 cantidad.value)">Añadir al carrito</button></td>
                         </tr>
                 </ng-container>
@@ -126,6 +163,7 @@
                                 producto.unidad_medida, 
                                 producto.precio_orientativo, 
                                 producto.cantidad_disponible, 
+                                producto.es_personalizable, 
                                 cantidad.value)">Añadir al carrito</button></td>
                         </tr>
                 </ng-container>

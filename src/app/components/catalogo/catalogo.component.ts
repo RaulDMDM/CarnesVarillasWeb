@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, HostListener, OnInit} from '@angular/core';
 import { ProductosService, Producto } from 'src/app/SERVICES/productos.service';
 
 @Component({
@@ -46,16 +46,19 @@ export class CatalogoComponent implements OnInit {
     const ternera = document.getElementById("ternera");
     const cerdo = document.getElementById("cerdo");
     const cordero = document.getElementById("cordero");
+    const elaborados = document.getElementById("elaborados");
     const embutido = document.getElementById("embutido");
 
     const terTopPosition = ternera?.getBoundingClientRect().top
     const cerTopPosition = cerdo?.getBoundingClientRect().top
     const corTopPosition = cordero?.getBoundingClientRect().top
+    const elbTopPosition = elaborados?.getBoundingClientRect().top
     const embTopPosition = embutido?.getBoundingClientRect().top
 
     console.log('ternera: ' + terTopPosition)
     console.log('cerdo: ' + cerTopPosition)
     console.log('cordero: ' + corTopPosition)
+    console.log('elaborados: ' + elbTopPosition)
     console.log('embutido: ' + embTopPosition)
     
     if (terTopPosition! < 300 && terTopPosition! > 250){
@@ -64,6 +67,8 @@ export class CatalogoComponent implements OnInit {
       this.ribbonIdSelected = "ribbonCerdo";
     } else if(corTopPosition! < 300 && corTopPosition! > 250){
       this.ribbonIdSelected = "ribbonCordero";
+    } else if(elbTopPosition! < 300 && elbTopPosition! > 250){
+      this.ribbonIdSelected = "ribbonElaborados";
     } else if(embTopPosition! < 300 && embTopPosition! > 250){
       this.ribbonIdSelected = "ribbonEmbutido";
     }
@@ -82,12 +87,13 @@ export class CatalogoComponent implements OnInit {
   //Listado de productos añadidos al carro y funcion para añadir.
 
   total = 0;
-  addProducto(nombre: any,grupo: any, unidad: any, precioOr:any ,cantDisp:any, cantSelec: any){
-    
+  addProducto(nombre: any,grupo: any, unidad: any, precioOr:any ,cantDisp:any,esPers:any, cantSelec: any){
+
     let calculoTotal: number;
     
     if (cantSelec > 0){
       if (cantSelec <= cantDisp) {
+
         if(unidad == "gr"){
           calculoTotal = Number(((cantSelec*precioOr)/1000).toFixed(2));
         }else{
