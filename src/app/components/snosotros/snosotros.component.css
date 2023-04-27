@@ -1,0 +1,14 @@
+:host{
+    display: flex;
+    min-height: calc(100vh - 318px);
+}
+
+#mainContainer{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+}
+img{
+    border: groove 4px #AC4545; 
+}

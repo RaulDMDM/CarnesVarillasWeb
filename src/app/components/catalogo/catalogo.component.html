@@ -1,4 +1,6 @@
+<!--Contenedor principal-->
 <div class="container p-0 pb-5" style="background: rgba(0, 0, 0, 0.9);">
+    <!--Contenedor para almacenar los ribbon del menu-->
     <div id="ribbonContainer" class="sticky-top" style="height: 100px; width: auto; margin-bottom: 30px; top: 144px;">
         <span class="titlesRibbon" 
         id="ribbonTernera"
@@ -21,6 +23,7 @@
         [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonEmbutido'}"
         (click)="scrollAndSelect(embutido, $event)">Embutidos</span>
     </div>
+    <!--Contenedor de los productos de grupo 'ternera'-->
     <fieldset #ternera id="ternera">
         <legend>Ternera</legend>
         <table id="terneraTable">
@@ -50,7 +53,7 @@
             </tbody>
         </table>
     </fieldset>
-
+    <!--Contenedor de los productos de grupo 'cerdo'-->
     <fieldset #cerdo id="cerdo">
         <legend>Cerdo</legend>
         <table id="cerdoTable">
@@ -80,7 +83,7 @@
             </tbody>
         </table>
     </fieldset>
-
+    <!--Contenedor de los productos de grupo 'cordero'-->
     <fieldset #cordero id="cordero">
         <legend>Cordero</legend>
         <table id="corderoTable">
@@ -110,7 +113,7 @@
             </tbody>
         </table>
     </fieldset>
-
+    <!--Contenedor de los productos de grupo 'elaborados'-->
     <fieldset #elaborados id="elaborados">
         <legend>Elaborados</legend>
         <table id="elaboradosTable">
@@ -140,7 +143,7 @@
             </tbody>
         </table>
     </fieldset>
-
+    <!--Contenedor de los productos de grupo 'embutido'-->
     <fieldset #embutido id="embutido">
         <legend>Embutido</legend>
         <table id="embutidoTable">
@@ -171,4 +174,5 @@
         </table>
     </fieldset>
 </div>
+<!--Llamada al componente carrito-->
 <app-carrito [listadoSeleccion]="listadoSeleccion"></app-carrito>

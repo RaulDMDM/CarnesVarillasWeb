@@ -1,3 +1,4 @@
+<!--Contenedor principal-->
 <div class="carr-container" *ngIf="listadoSeleccion.length != 0">
   <div class="carr-button">
     <img
@@ -5,7 +6,9 @@
       alt="carrito"
       style="width: 40px; height: auto"/>
   </div>
+  <!--Contenedor de la lista del carrito-->
   <div id="listaCarrito" style="background-color: black; width: 500px; height: auto;">
+      <!--Tabla del carrito-->
         <table class="carrito-tabla">
           <thead>
             <th>Desglose</th>
@@ -14,6 +17,7 @@
             <th></th>
           </thead>
           <tbody>
+              <!--Productos en el carrito-->
               <tr *ngFor="let producto of listadoSeleccion" #filaProducto>
                 <td style="text-align: left; padding-left: 20px; font-size: 12px;">{{producto.nombre_producto}}<br>
                   {{producto.grupo_producto}}<br><span style="font-size: 9px;color: darkgrey;">{{producto.precio_producto}}€ Kg/Ud</span></td>
@@ -21,12 +25,14 @@
                 <td>{{producto.total_producto}} €</td>
                 <td style="width: 10%"><button style="border-radius: 0;" (click)="eliminarRegistro(filaProducto, producto.total_producto!)">X</button></td>
               </tr>
+              <!--Boton de activar formulario y total-->
               <tr>
                 <td colspan="2"><button (click)="enableForm = true">Realizar pedido</button></td>
                 <td style="font-size: 20px; text-decoration: underline;">{{total}} €</td>
               </tr>
           </tbody>
         </table>
+        <!--Formulario de contacto-->
         <fieldset style="width: 90%;height: auto;" class="my-4" *ngIf="enableForm == true">
           <legend>Formulario de envio</legend>
           <form (ngSubmit)="okPedido(nombreCliente.value, DNICliente.value, telCliente.value, mailCliente.value, fechaRecogida.value)" style="font-size: 15px; text-align: center;">

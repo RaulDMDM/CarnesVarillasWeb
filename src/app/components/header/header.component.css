@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .custom-nav-bar{
     background-image: url("../../../assets/DarkWood.jpg");
@@ -7,7 +6,6 @@
     border-bottom: 3px groove #AC4545;
 
 }
-
 .custom-nav-bar-text{
     color: white;
     font-family: 'Roboto', sans-serif;

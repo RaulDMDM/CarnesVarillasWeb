@@ -1,3 +1,4 @@
+//Importación de paquetes y componentes.
 import { Component, HostListener, OnInit} from '@angular/core';
 import { ProductosService, Producto } from 'src/app/SERVICES/productos.service';
 
@@ -6,12 +7,13 @@ import { ProductosService, Producto } from 'src/app/SERVICES/productos.service';
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.css']
 })
-export class CatalogoComponent implements OnInit {
-  ribbonIdSelected: string = "ribbonTernera";
 
-  listaProductos: Producto[];
-  listadoSeleccion = new Array<ProdEnCarro>;
-  
+//Clase del componente
+export class CatalogoComponent implements OnInit {
+  //Declaración de variables.
+  ribbonIdSelected: string = "ribbonTernera"
+  listaProductos: Producto[]
+  listadoSeleccion = new Array<ProdEnCarro>
   prodSeleccionado: ProdEnCarro = {
     nombre_producto:"",
     grupo_producto:"",
@@ -22,26 +24,31 @@ export class CatalogoComponent implements OnInit {
   }
 
   constructor(private productosService: ProductosService){}
-
+  
+  //Funcion ngOnInit, se ejecuta al iniciarse el componente.
   ngOnInit(): void {
     this.pintaStock();
   }
   
-  
+  //Decorador que ejecuta funcion al hacer scroll
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(){
     this.autoColorRibbon()
   }
 
-  scrollAndSelect(el: HTMLElement, event: Event){
+  /*Funcion que tras seleccionar una opción del menú te lleva automáticamente
+  al elemento seleccionado y colorea el ribbon como seleccionado*/
+  scrollAndSelect(element: HTMLElement, event: Event){
     const yOffset = -294;
-    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({top: y, behavior: 'smooth'});
 
     var currentRibId = event.target as HTMLElement;
     this.ribbonIdSelected = currentRibId.id;
   };
 
+  /*Funcion que marca un ribbon como seleccionado cuando te desplazas
+  por la página haciendo scroll*/
   autoColorRibbon(){
     const ternera = document.getElementById("ternera");
     const cerdo = document.getElementById("cerdo");
@@ -85,7 +92,6 @@ export class CatalogoComponent implements OnInit {
   }
 
   //Listado de productos añadidos al carro y funcion para añadir.
-
   total = 0;
   addProducto(nombre: any,grupo: any, unidad: any, precioOr:any ,cantDisp:any,esPers:any, cantSelec: any){
 

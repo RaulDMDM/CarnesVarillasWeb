@@ -1,3 +1,4 @@
+//conexion con la BD, ubicada en el archivo conection.
 require('./server/conection');
 
 const express = require('express');

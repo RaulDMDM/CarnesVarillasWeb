@@ -1,10 +1,12 @@
-<nav
-  class="navbar navbar-expand-lg p-3 custom-nav-bar d-flex justify-content-evenly"
->
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg p-3 custom-nav-bar d-flex justify-content-evenly">
+  <!--Logotipo-->
   <a href="/" class="navbar-brand">
     <img src="../../../assets/logo.png" alt="" style="height: 100px" />
   </a>
+  <!--Lista con los elementos del menú-->
   <ul class="navbar-nav d-flex justify-content-evenly w-50">
+    <!--Vinculo al componente inicio-->
     <li class="nav-item">
       <a class="nav-link custom-nav-bar-text" 
       [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'inicio'}"
@@ -12,6 +14,7 @@
       id="inicio"
       (click)="NavBtnSelected($event)">Inicio</a>
     </li>
+    <!--Vinculo al componente catalogo-->
     <li class="nav-item">
       <a class="nav-link custom-nav-bar-text" 
       [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'catalogo'}"
@@ -19,6 +22,7 @@
       id="catalogo"
       (click)="NavBtnSelected($event)">Catálogo</a>
     </li>
+    <!--Vinculo al componente aprende-->
     <li class="nav-item">
       <a class="nav-link custom-nav-bar-text" 
       [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'aprende'}"
@@ -26,6 +30,7 @@
       id="aprende"
       (click)="NavBtnSelected($event)">Aprende</a>
     </li>
+    <!--Vinculo al componente sobre nosotros-->
     <li class="nav-item">
       <a class="nav-link custom-nav-bar-text"
       [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'snosotros'}"
@@ -33,6 +38,7 @@
       id="snosotros"
       (click)="NavBtnSelected($event)">Sobre nosotros</a>
     </li>
+    <!--Vinculo al componente contacto-->
     <li class="nav-item">
       <a class="nav-link custom-nav-bar-text"
       [ngClass]="{'custom-nav-bar-text-selected': idSelected == 'contacto'}"

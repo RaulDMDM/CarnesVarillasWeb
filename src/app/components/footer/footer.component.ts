@@ -1,3 +1,4 @@
+//Importacion de paquetes y componentes
 import { Component, ElementRef} from '@angular/core';
 
 @Component({
@@ -5,13 +6,17 @@ import { Component, ElementRef} from '@angular/core';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })
+
+//Clase del componente
 export class FooterComponent{
   public getElHeight: number;
-
-  constructor(private el:ElementRef) {}
-
+  
+  //Declaración del constructor
+  constructor(private nativeElement:ElementRef) {}
+  
+  //Obtener el alto del footer
   obtenerAlto(): number{
-    this.getElHeight = this.el.nativeElement.offsetHeight;
+    this.getElHeight = this.nativeElement.nativeElement.offsetHeight;
     return this.getElHeight;
   }
 }

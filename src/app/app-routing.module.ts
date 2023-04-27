@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:"catalogo", component:CatalogoComponent},
   {path:"aprende", component:AprendeComponent},
   {path:"snosotros", component:SnosotrosComponent},
-  {path:"empleados",component:EmpleadosComponent, /*canActivate:[LoginPermissionsGuard]*/},
+  {path:"empleados",component:EmpleadosComponent, canActivate:[LoginPermissionsGuard]},
   {path:"contacto",component:ContactoComponent},
   {path:"login",component:LoginComponent},
 ];

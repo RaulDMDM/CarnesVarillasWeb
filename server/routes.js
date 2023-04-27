@@ -1,9 +1,11 @@
 const router = require('express').Router();
 const conexion = require('./conection');
 
-router.get('/empleados',(req,res)=>{
-    let sql = 'select * from empleado_contrasenia';
-    conexion.query(sql,(error,rows,fields)=>{
+//GETs
+router.get('/empleados/:dni',(req,res)=>{
+    const {dni} = req.params
+    let sql = 'SELECT * FROM empleado_contrasenia WHERE dni_empleado = ?';
+    conexion.query(sql,[dni],(error,rows,fields)=>{
         if(error) throw error;
         else{
             res.json(rows);
@@ -41,6 +43,7 @@ router.get('/productos-pedido', (req,res)=>{
     })
 })
 
+//POSTs
 router.post('/pedidos-cliente', (req, res)=>{
     const{fechRec, dni, nombre, tel, mail, total} = req.body;
 
@@ -80,6 +83,7 @@ router.post('/stock/addproducto', (req, res)=>{
     })
 })
 
+//PUTs
 router.put('/stock/updateselectprod', (req, res)=>{
     const{nombre_producto, cant_seleccionada}=req.body;
 
@@ -111,19 +115,6 @@ router.put('/stock/updatestockprod', (req, res)=>{
     })
 })
 
-router.delete('/stock/deletestockprod/:nombre_producto', (req, res)=>{
-    const{nombre_producto} = req.params;
-    
-    let sql = `DELETE FROM productos WHERE nombre_producto = ('${nombre_producto}')`;
-    conexion.query(sql,(error, rows,fields)=>{
-        if (error) throw error;
-        else{
-            res.json({status: 'producto eliminado'});
-        }
-    })
-})
-
-
 router.put('/pedidos-cliente', (req, res)=>{
     const{id_pedido, estado}=req.body;
 
@@ -136,63 +127,17 @@ router.put('/pedidos-cliente', (req, res)=>{
     })
 })
 
-
-
-//CONSULTAS EMPLEADO-CONTRASEÑA ---------------------------------
-
-//get elemento
-router.get('/empleados/:dni',(req,res)=>{
-    const {dni} = req.params
-    let sql = 'SELECT * FROM empleado_contrasenia WHERE dni_empleado = ?';
-    conexion.query(sql,[dni],(error,rows,fields)=>{
-        if(error) throw error;
-        else{
-            res.json(rows);
-        }
-    });
-});
-
-//agregar elemento
-router.post('/empleados', (req, res)=>{
-    const{dni, nombre, contrasenia} = req.body;
-
-    let sql = `INSERT INTO empleado_contrasenia(dni_empleado , nombre_empleado, contrasenia) VALUES ('${dni}', '${nombre}', '${contrasenia}')`;
-    conexion.query(sql,(error, rows,fields)=>{
-        if (error) throw error;
-        else{
-            res.json({status: 'usuario agregado'});
-        }
-    })
-})
-
-//eliminar elemento
-router.delete('/empleados/:dni', (req, res)=>{
-    const{id} = req.params
+//DELETEs
+router.delete('/stock/deletestockprod/:nombre_producto', (req, res)=>{
+    const{nombre_producto} = req.params;
     
-    let sql = `DELETE FROM empleado_contrasenia WHERE dni_empleado = ('${id}')`;
+    let sql = `DELETE FROM productos WHERE nombre_producto = ('${nombre_producto}')`;
     conexion.query(sql,(error, rows,fields)=>{
         if (error) throw error;
         else{
-            res.json({status: 'usuario eliminado'});
+            res.json({status: 'producto eliminado'});
         }
     })
 })
-
-//modificar elemento
-router.put('/empleados/:dni', (req, res)=>{
-    const{id}=req.params;
-    const{nombre, contrasenia}=req.body;
-
-    let sql = `UPDATE empleado_contrasenia SET nombre_empleado='${nombre}', contrasenia='${contrasenia}' where dni_empleado= '${id}'`;
-    conexion.query(sql,(error, rows,fields)=>{
-        if (error) throw error;
-        else{
-            res.json({status: 'elemento modificado'});
-        }
-    })
-})
-
-
-//CONSULTAS STOCK ---------------------------------
 
 module.exports = router;

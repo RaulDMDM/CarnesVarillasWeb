@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
 :host{
     display: flex;
     min-height: calc(100vh - 318px);
@@ -29,7 +27,7 @@
 }
 
 .carr-text{
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: white;
     text-align: center;
 }

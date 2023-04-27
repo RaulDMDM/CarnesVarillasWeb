@@ -1,3 +1,4 @@
+//Importacion de paquetes y componentes
 import { Component } from '@angular/core';
 import { EmpleadosService, Empleado } from 'src/app/SERVICES/empleados.service';
 import { Router } from '@angular/router';
@@ -8,9 +9,11 @@ import { LoginPermissionsGuard } from 'src/app/guards/login-permissions.guard';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
+//Clase del componente
 export class LoginComponent {
+  //Variables
   ListaEmpleados: Empleado[];
-  isTrue = true;
   invalidUserStyle = "";
   invalidPassStyle = "";
 
@@ -21,6 +24,9 @@ export class LoginComponent {
     private premissionsGuard: LoginPermissionsGuard
   ) {}
 
+  /*Funcion que valida las credenciales introducidas por el usuario tras hacer
+  una consulta en la base de datos. Si los datos son correctos redirige al componente
+  empleados. Si son erroneos, se colorea de rojo el campo erroneo.*/
   validarCredenciales() {
     //Obtencion de valores input dedesde DOM
     let dni = document.getElementById('dni_input') as HTMLInputElement;

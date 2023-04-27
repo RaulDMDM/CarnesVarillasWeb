@@ -1,3 +1,4 @@
+//Importacion de paquetes y componentes
 import { Component, Input, ChangeDetectionStrategy, DoCheck } from '@angular/core';
 import { CatalogoComponent } from '../catalogo.component';
 import { ProdEnCarro } from '../catalogo.component';
@@ -9,13 +10,17 @@ import { ProductosService} from 'src/app/SERVICES/productos.service';
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css'],
 })
+
+//Clase del componente
 export class CarritoComponent implements DoCheck{
   
   constructor(private catalogo: CatalogoComponent,
     private pedidosService: PedidosService,
     private productosService: ProductosService){}
-  @Input() listadoSeleccion: Array<ProdEnCarro>;
   
+
+  //Variables
+  @Input() listadoSeleccion: Array<ProdEnCarro>;
   total = 0;
   cantidadRestada = 0;
   enableForm = false;
@@ -26,16 +31,21 @@ export class CarritoComponent implements DoCheck{
   
   //Deteccion de cambios para actualizacion en tiempo real.
   changeDetection: ChangeDetectionStrategy.OnPush;
-
+  
+  //Metodo que se ejecuta al detectar cambios en el componente actual
   ngDoCheck(): void {
     this.total = Number((this.catalogo.total - this.cantidadRestada).toFixed(2))
   }
 
+  //Elimina un producto del carrito
   eliminarRegistro(reg: HTMLElement, tot: number){
     this.cantidadRestada = this.cantidadRestada + tot;
     reg.remove();
   }
   
+  /*Confirmar pedido. Tras confirmar que en el formulario los datos introducidos son válidos, 
+  se agrega el nuevo pedido a la base de datos y se recalcula el stock disponible. Se avisa al 
+  usuario mediante una alerta si hay algun problema o si el pedido se ha creado correctamente. */
   okPedido(nombre: string, dni: string, tel: string, mail: string, fechRec: string){
     if (nombre != ""){
       if (dni != "" && dni.length <= 9){

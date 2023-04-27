@@ -1,4 +1,6 @@
+<!--Contenedor principal-->
 <div class="container p-0 pb-5" style="background: rgba(0, 0, 0, 0.9);">
+    <!--Contenedor con ribbon de negacion-->
     <div id="ribbonContainer" class="sticky-top" style="height: 100px; width: auto; margin-bottom: 30px; top: 144px">
         <span class="titlesRibbon" 
         id="ribbonDespieces"
@@ -9,9 +11,12 @@
         [ngClass]="{'titlesRibbon-selected':ribbonIdSelected == 'ribbonHerramientas'}"
         (click)="scrollAndSelect(herramientas, $event)">Herramientas</span>
     </div>
+    <!--Contenedor de despieces-->
     <div #despieces id="despieces">
+        <!--Despiece Ternera-->
         <fieldset>
             <legend>TERNERA</legend>
+            <!--Colección SVG y descripciones-->
             <div id="despieceTernera">
                 <div id="1-cabeza-container">
                     <svg width="237px" height="174px" id="1-cabeza-svgItem">
@@ -471,6 +476,7 @@
         </fieldset>
     </div>
     <br><br><br>
+    <!--Contenedor herramientas-->
     <div #herramientas id="herramientas">
         <fieldset>
             <legend>CUCHILLERÍA</legend>

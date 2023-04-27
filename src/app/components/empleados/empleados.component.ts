@@ -1,3 +1,4 @@
+//Importacion de paquetes y componentes
 import { Component, OnInit } from '@angular/core';
 import { ProductosService, Producto } from 'src/app/SERVICES/productos.service';
 import { PedidosService, PedidoCliente, ProductoPedido } from 'src/app/SERVICES/pedidos.service';
@@ -8,21 +9,27 @@ import { PedidosService, PedidoCliente, ProductoPedido } from 'src/app/SERVICES/
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.css']
 })
+
+//Clase del componente
 export class EmpleadosComponent implements OnInit{
 
+  //Variables
   listaPedClient: PedidoCliente[];
   listaProdPedido: ProductoPedido[];
   listaProductos: Producto[];
-  styleStatus = "red"
 
   constructor(private productosService: ProductosService, 
               private pedidosService: PedidosService){}
   
+  /*Funcion que se ejecuta nada mas cargar el componente. En este caso llama a
+  las funciones pintaPedidos y pintaProductos*/
   ngOnInit(){
     this.pintaPedidos()
     this.pintaProductos()
   }
-
+  
+  /*Hace una consulta a la base de datos para extraer los pedidos activos. Los almacena en la lista
+  listaPedClient */
   pintaPedidos(){
     this.pedidosService.getPedidosCliente().subscribe(
       (res) =>{
@@ -36,6 +43,8 @@ export class EmpleadosComponent implements OnInit{
       (err) => console.log(err));
   }
   
+  /*Abre el formulario de edicion de producto al hacer click sobre un elemento
+  de la tabla productos */
   editarProducto(nombre_producto: string){
     let trEl = document.getElementById("edit" + nombre_producto)
     let trBtnEl = document.getElementById("btn" + nombre_producto)
@@ -48,7 +57,8 @@ export class EmpleadosComponent implements OnInit{
       trBtnEl!.style.display = 'table-row'
     }
   }
-
+  
+  /*Obtiene los datos del producto tras la edición y mediante una consulta a la BD lo modifica*/
   guardarEdit(producto: Producto){
     producto.nombre_producto = (<HTMLInputElement>document.getElementById('nombreProd' + producto.nombre_producto)).value
     producto.grupo_producto = (<HTMLInputElement>document.getElementById('grupoProd' + producto.nombre_producto)).value
@@ -61,13 +71,15 @@ export class EmpleadosComponent implements OnInit{
 
     this.productosService.actualizarProducto(producto).subscribe()
   }
-
+  
+  /*Elimina el producto seleccionado de la base de datos*/
   eliminarProducto(producto: Producto){
     this.productosService.borrarProducto(producto.nombre_producto!).subscribe()
     alert('Producto eliminado')
     location.reload()
   }
-
+  
+  /*Añade un producto con los datos del formulario de añadir producto a la base de datos*/
   aniadirProductos(){
     let nombre_producto = (<HTMLInputElement>document.getElementById('inNombreProducto')).value
     let grupo_producto = (<HTMLInputElement>document.getElementById('inGrupoProducto')).value
@@ -97,6 +109,7 @@ export class EmpleadosComponent implements OnInit{
     location.reload()
   }
   
+  /*Pinta la tabla con todos los productos de la base de datos.*/
   pintaProductos(){
     this.productosService.getStock().subscribe(
       (res) =>{
@@ -104,7 +117,8 @@ export class EmpleadosComponent implements OnInit{
       },
       (err) => console.log(err));
   }
-
+  
+  /*Convierte la fecha del pedido obtenida en consulta a formato dd/mm/aaaa*/
   convFecha(input?: string){
     let fechaConv = new Date(input ?? '');
     let day = fechaConv.getDate();
@@ -115,7 +129,9 @@ export class EmpleadosComponent implements OnInit{
     
     return finalDate;
   }
-
+  
+  /*Actualiza el estado del pedido mediante el select del HTML. Si el estado es FINALIZADO, lo borra de la
+  base de datos.*/
   updtProdStatus(event: Event, id_pedido?:number){
     let selection = event.target as HTMLInputElement;
     let UpdatePed = {
